@@ -1,0 +1,59 @@
+POST - http://127.0.0.1:8000/user/login/
+
+Request:
+{
+  "email": "samyak@gmail.com",
+  "password": "kljid3#jain"
+}
+
+Response:
+{"token":"d9150ecb01381b43c3ca5654c7c2dda8b0821306"}
+
+POST - http://127.0.0.1:8000/user/signup/
+
+Request:
+{
+  "email": "samyak1@gmail.com",
+  "name": "Samyak",
+  "password1": "kljid3#jain",
+  "password2": "kljid3#jain"
+}
+
+Response:
+{
+    "id": 2,
+    "email": "samyak1@gmail.com",
+    "name": "Samyak"
+}
+
+POST  - http://127.0.0.1:8000/api/send/
+
+Request:
+{
+    "to_user_email": "samyak1@gmail.com"
+}
+
+Response:
+{
+  "message":"Friend request already sent."
+}
+
+PATCH - http://127.0.0.1:8000/api/accept/
+
+{
+    "from_user_email": "samyak1@gmail.com"
+}
+
+{"message":"Friend request is in accepted state."}
+
+PATCH - http://127.0.0.1:8000/api/reject/
+
+{
+    "from_user_email": "samyak1@gmail.com"
+}
+
+{"message":"Friend request is in rejected state."}
+
+GET - http://127.0.0.1:8000/api/accepted_friend_requests/
+
+GET - http://127.0.0.1:8000/api/pending_friend_requests/
